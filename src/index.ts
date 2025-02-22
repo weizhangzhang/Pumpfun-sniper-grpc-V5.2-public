@@ -48,19 +48,6 @@ let solAmountBeforeBuy;
 let solAmountAfterBuy;
 let buySolAmount;
 
-console.log(title, '\n');
-console.log('Your Pubkey => ', keypair.publicKey.toBase58(), '\n');
-console.log('Buy Amount =>', amount, '\n');
-console.log('Jito fee => ', process.env.JITO_FEE!, '\n');
-console.log('Price check interval => ', process.env.PRICE_CHECK_INTERVAL, '\n');
-console.log('Take profit => ', process.env.TAKE_PROFIT!, '\n');
-console.log('Stop loss => ', process.env.STOP_LOSS!, '\n');
-console.log('Sell Slippage => ', process.env.SELL_SLIPPAGE!, '\n');
-console.log('Skip selling if lost more than => ', process.env.SKIP_SELLING_IF_LOST_MORE_THAN!, '\n');
-console.log('Price check duration => ', process.env.PRICE_CHECK_DURATION!, '\n');
-console.log('Auto sell => ', process.env.AUTO_SELL!, '\n');
-console.log('Max sell retries => ', process.env.MAX_SELL_RETRIES!, '\n');
-
 function handleStreamEvents(stream: ClientDuplexStream<SubscribeRequest, SubscribeUpdate>): Promise<void> {
     return new Promise<void>((resolve, reject) => {
         stream.on('data', async (data) => {
